@@ -17,7 +17,24 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.test.testlocationapp",
+      "buildNumber": "6",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+      },
       "supportsTablet": true
+    },
+    "android": {
+      "useNextNotificationsApi": true,
+      "package": "com.test.testlocationapp",
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION", "ACCESS_BACKGROUND_LOCATION", "CAMERA", "FOREGROUND_SERVICE"],
+      "versionCode": 6,
+      "config": {
+        "googleMaps": { "apiKey": "<key here>" }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
