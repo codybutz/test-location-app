@@ -33,6 +33,16 @@ export default class App  extends Component {
         }
     }
 
+    componentDidMount() {
+        Location.hasStartedLocationUpdatesAsync('test-app-location').then((result) => {
+            if (result) {
+                Location.stopLocationUpdatesAsync('test-app-location').then(() => {
+                    console.log('Location updates stopped');
+                });
+            }
+        })
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -70,6 +80,7 @@ TaskManager.defineTask(
 
         if (data) {
             console.log(Date.now());
+            console.log(data);
         }
     }
 );
